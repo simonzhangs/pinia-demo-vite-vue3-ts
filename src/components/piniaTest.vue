@@ -14,6 +14,9 @@ import { storeToRefs } from 'pinia';
 
 const store = myStore()
 
+//直接解构得到store的数据并不是响应式数据，
+//当count数据改变时，解构的数据并不会跟着发生变化
+//需要在pinia引入`storeToRefs()`方法
 const {data,count,wordToUpper} = storeToRefs(store)
 </script>
 <style scoped>
